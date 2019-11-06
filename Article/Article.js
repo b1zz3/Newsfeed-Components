@@ -85,6 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Sansecuestro, The Point of the Spear',
+    date: 'Jun 8th, 1987',
+    firstParagraph: `Sansecuestro. Where the dregs and vets go to seek fortunes in escrow. Most rob, cheat, and steal for their nest though.  The rest
+          process the echo.`,
+    secondParagraph: `...and I process: the system, the network. Propagating data for hire. A true expert. Corporate interest' keep the lights on.
+          Coding up the dirt in python`,
+    thirdParagraph: `Beneath this silicon paradise there's an underground that's founded on rights. Crypt-o-graphic cypher-text. And undernets in this 
+          wild-wild west. Keeping the faucet of information unobstructed by most complications. Swapping source code data methods. Keeping 'our' trade 
+          extra-protected.`
   }
 ];
 
@@ -112,3 +123,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle (title, date, p1, p2, p3) {
+
+  const articleDiv = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const para1 = document.createElement('p');
+  const para2 = document.createElement('p');
+  const para3 = document.createElement('p');
+  const button = document.createElement('span');
+
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(para1);
+  articleDiv.appendChild(para2);
+  articleDiv.appendChild(para3);
+  articleDiv.appendChild(button);
+
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  button.classList.add('expandButton');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  para1.textContent = p1;
+  para2.textContent = p2;
+  para3.textContent = p3;
+  // button.textContent || src = btn;
+
+  button.addEventListener('click', () => {
+    articleDiv.classList.toggle('article-open');
+    console.log('we-be-clickin');
+  })
+
+  console.log('stuff');
+
+  return articleDiv;
+}
+
+
+const parent = document.querySelector('.articles');
+
+data.forEach(data => {
+  const newArticle = createArticle(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph);
+  parent.appendChild(newArticle);
+})
