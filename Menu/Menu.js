@@ -37,7 +37,7 @@ let menuItems = [
 const createMenu = (array) => {
   const menuDiv = document.createElement('div');
   const menuList = document.createElement('ul');
-  const menuItm = array.forEach(items => {
+  array.forEach(items => {
     let item = document.createElement('li');
     item.textContent = items;
     menuList.appendChild(item);    

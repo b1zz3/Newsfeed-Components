@@ -150,7 +150,8 @@ function createArticle (title, date, p1, p2, p3) {
   para1.textContent = p1;
   para2.textContent = p2;
   para3.textContent = p3;
-  // button.textContent || src = btn;
+  const arrow = '\u25bc'
+  button.textContent = arrow;
 
   button.addEventListener('click', () => {
     articleDiv.classList.toggle('article-open');
