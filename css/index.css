@@ -82,16 +82,17 @@ body {
 }
 .article-open {
   height: 400px;
-  animation: pulse 5s infinite;
+  animation: pulse 3s infinite;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  color: white;
 }
 @keyframes pulse {
   0% {
-    background-color: rgba(4, 37, 29, 0.986);
+    background-color: rgba(255, 255, 255, 0.986);
   }
   100% {
-    background-color: #61cf73;
+    background-color: #388E3C;
   }
 }
 .menu-button {
