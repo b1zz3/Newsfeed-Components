@@ -83,6 +83,8 @@ body {
 .article-open {
   height: 400px;
   animation: pulse 5s infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 @keyframes pulse {
   0% {
