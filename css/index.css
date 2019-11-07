@@ -82,6 +82,15 @@ body {
 }
 .article-open {
   height: 400px;
+  animation: pulse 5s infinite;
+}
+@keyframes pulse {
+  0% {
+    background-color: rgba(4, 37, 29, 0.986);
+  }
+  100% {
+    background-color: #61cf73;
+  }
 }
 .menu-button {
   position: absolute;
