@@ -43,6 +43,20 @@
 
 .article-open {
   height: 400px;
+  // stretch attempt
+  animation: pulse 3s infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  color: white;
+}
+// pulse animation color
+@keyframes pulse {
+  0% {
+    background-color:  rgba(255, 255, 255, 0.986);
+  }
+  100% {
+    background-color: #388E3C;
+  }
 }
 
 
